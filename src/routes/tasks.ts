@@ -34,13 +34,10 @@ router.route('/edit/:id')
         const task = await Task.findById(id);
         res.render('tasks/edit', { task });
     })
-    // >
     .post( async (req: Request, res: Response) => {
         const { id } = req.params;
         const { title, description } = req.body;
-        console.log(title + id + description);
         await Task.findByIdAndUpdate(id, { title, description });
         res.redirect('/tasks/list');
     })
-
 export default router;

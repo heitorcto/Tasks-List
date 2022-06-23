@@ -1,6 +1,5 @@
 import express from "express";
 import morgan from "morgan";
-// import engine from "express-handlebars";
 import { engine } from "express-handlebars";
 import path from "path";
 
@@ -44,7 +43,7 @@ class Application {
         this.app.use(indexRoutes);
         this.app.use("/tasks", taskRoutes);
 
-        this.app.use(express.static(path.join(__dirname, 'public')));
+        this.app.use(express.static(path.join(__dirname, "public")));
     }
 
     start() {
